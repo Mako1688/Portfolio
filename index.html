@@ -6,24 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Ogaz-Vega Portfolio</title>
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
+    <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
+    <!-- Header section -->
     <div id="header">
         <div class="container">
+            <!-- Navigation bar -->
             <nav>
+                <!-- Logo image -->
                 <img src="images/logo.png" class="logo">
+                <!-- Navigation menu -->
                 <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <!-- Close menu icon -->
                     <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
+                <!-- Open menu icon -->
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
+            <!-- Header text -->
             <div class="header-text">
                 <p>Computer Science Game Designer</p>
                 <h1>Hi, I am <span>Marco</span><br>Ogaz-Vega from California</h1>
@@ -31,12 +40,15 @@
         </div>
     </div>
     <!-- --------------about--------------   -->
+    <!-- About section -->
     <div id="about">
         <div class="container">
             <div class="row">
+                <!-- About section image -->
                 <div class="about-col-1">
                     <img src="images/me.jpg">
                 </div>
+                <!-- About section text -->
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
                     <p> Hi, I’m Marco Ogaz-Vega, I’m interested in Video Games, Sports, Programming, and Learning!
@@ -44,11 +56,13 @@
                         (C++, Python, Javascript, and many more!). Also learning how to kickflip!
                         I’m looking to collaborate on any project I can be proud of!
                     </p>
+                    <!-- Tab titles -->
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
                         <p class="tab-links" onclick="opentab('education')">Education</p>
                     </div>
+                    <!-- Tab contents -->
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>Computer Science</span><br>Consistent SOLID Architecture Implementation</li>
@@ -78,10 +92,12 @@
         </div>
     </div>
     <!-- ---------------Portfolio--------------- -->
+    <!-- Portfolio section -->
     <div id="portfolio">
         <div class="container">
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
+                <!-- Individual work item -->
                 <div class="work">
                     <img src="images/RollerGirl.png">
                     <div class="layer">
@@ -114,18 +130,22 @@
                     </div>
                 </div>
             </div>
+            <!-- Button to see more work -->
             <a href="#" class="btn">See more</a>
         </div>
     </div>
 
     <!-- ----------------contact------------------>
+    <!-- Contact section -->
     <div id="contact">
         <div class="container">
             <div class="row">
+                <!-- Contact left column -->
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
                     <p><i class="fas fa-envelope"></i> marcoogazvega@hotmail.com</p>
                     <p><i class="fas fa-phone"></i> 9494446606</p>
+                    <!-- Social icons -->
                     <div class="social-icons">
                         <a href="https://discordapp.com/users/248626255023308800" target="_blank"><i
                                 class="fab fa-discord"></i></a>
@@ -133,9 +153,12 @@
                                 class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/Mako1688" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
+                    <!-- Button to download resume -->
                     <a href="images/Marco Resume.pdf" download class="btn btn2">Download Resume</a>
                 </div>
+                <!-- Contact right column -->
                 <div class="contact-right">
+                    <!-- Contact form -->
                     <form id="contactForm">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>

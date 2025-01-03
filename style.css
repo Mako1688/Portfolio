@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* Smooth scrolling for the entire document */
 html {
   scroll-behavior: smooth;
 }
@@ -14,6 +15,7 @@ body {
   color: #fff;
 }
 
+/* Styling for the header section */
 #header {
   width: 100%;
   height: 100vh;
@@ -22,15 +24,18 @@ body {
   background-position: center;
 }
 
+/* Styling for the logo image */
 .logo {
   width: 140px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
+/* Container padding */
 .container {
   padding: 10px 10%;
 }
 
+/* Navigation bar styling */
 nav {
   display: flex;
   align-items: center;
@@ -38,12 +43,14 @@ nav {
   flex-wrap: wrap;
 }
 
+/* Navigation list items */
 nav ul li {
   display: inline-block;
   list-style: none;
   margin: 10px 20px;
 }
 
+/* Navigation links */
 nav ul li a {
   color: #fff;
   text-decoration: none;
@@ -51,6 +58,7 @@ nav ul li a {
   position: relative;
 }
 
+/* Underline effect for navigation links */
 nav ul li a::after {
   content: "";
   width: 0%;
@@ -62,10 +70,12 @@ nav ul li a::after {
   transition: 0.5s;
 }
 
+/* Hover effect for navigation links */
 nav ul li a:hover::after {
   width: 100%;
 }
 
+/* Header text styling */
 .header-text {
   margin-top: 20%;
   font-size: 30px;
@@ -84,18 +94,22 @@ nav ul li a:hover::after {
   padding: 80px 0;
   color: #ababab;
 }
+
+/* Flexbox layout for rows */
 .row {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
+/* About section columns */
 .about-col-1,
 .about-col-2 {
   flex: 1;
   padding: 20px;
 }
 
+/* About section image */
 .about-col-1 img {
   width: 100%; /* Set the width to a third of the container */
   height: auto; /* Maintain aspect ratio */
@@ -110,17 +124,20 @@ nav ul li a:hover::after {
   flex-basis: 60%;
 }
 
+/* Subtitle styling */
 .sub-title {
   font-size: 60px;
   font-weight: 600;
   color: #fff;
 }
 
+/* Tab titles styling */
 .tab-titles {
   display: flex;
   margin: 20px 0 40px;
 }
 
+/* Tab links styling */
 .tab-links {
   margin-right: 50px;
   font-size: 18px;
@@ -129,6 +146,7 @@ nav ul li a:hover::after {
   position: relative;
 }
 
+/* Underline effect for tab links */
 .tab-links::after {
   content: "";
   width: 0;
@@ -140,15 +158,18 @@ nav ul li a:hover::after {
   transition: 0.5s;
 }
 
+/* Active tab link underline effect */
 .tab-links.active-link::after {
   width: 50%;
 }
 
+/* Tab contents styling */
 .tab-contents {
   display: none; /* Ensure the contents are displayed */
   margin-top: 20px; /* Add some space above the contents */
 }
 
+/* List styling inside tab contents */
 .tab-contents ul {
   list-style: none; /* Remove default list styling */
   padding: 0; /* Remove default padding */
@@ -159,12 +180,14 @@ nav ul li a:hover::after {
   margin: 10px 0;
 }
 
+/* Span styling inside tab contents */
 .tab-contents ul li span {
   color: #258225;
   font-size: 14px;
   font-weight: bold; /* Make the span text bold */
 }
 
+/* Active tab content display */
 .tab-contents.active-tab {
   display: block;
 }
@@ -182,6 +205,7 @@ nav ul li a:hover::after {
   text-align: center; /* Center align the text */
 }
 
+/* Work list grid layout */
 .work-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -189,12 +213,14 @@ nav ul li a:hover::after {
   margin-top: 50px;
 }
 
+/* Individual work item styling */
 .work {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
 }
 
+/* Work item image styling */
 .work img {
   width: 100%;
   border-radius: 10px;
@@ -202,6 +228,7 @@ nav ul li a:hover::after {
   transition: transform 0.5s;
 }
 
+/* Layer overlay styling */
 .layer {
   width: 100%;
   height: 0;
@@ -221,11 +248,13 @@ nav ul li a:hover::after {
   transition: height 0.5s;
 }
 
+/* Layer heading styling */
 .layer h3 {
   font-weight: 500;
   margin-bottom: 20px;
 }
 
+/* Layer link styling */
 .layer a {
   margin-top: 20px;
   color: #119015;
@@ -239,14 +268,17 @@ nav ul li a:hover::after {
   text-align: center;
 }
 
+/* Hover effect for work item image */
 .work:hover img {
   transform: scale(1.1);
 }
 
+/* Hover effect for layer overlay */
 .work:hover .layer {
   height: 100%;
 }
 
+/* Button styling */
 .btn {
   display: block;
   margin: 50px auto;
@@ -259,6 +291,7 @@ nav ul li a:hover::after {
   transition: background 0.5s;
 }
 
+/* Hover effect for button */
 .btn:hover {
   background: #119015;
 }
@@ -269,34 +302,41 @@ nav ul li a:hover::after {
   color: #fff;
 }
 
+/* Contact container layout */
 .contact .container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
+/* Contact left column styling */
 .contact-left {
   flex-basis: 35%;
 }
 
+/* Contact right column styling */
 .contact-right {
   flex-basis: 60%;
 }
 
+/* Contact left paragraph styling */
 .contact-left p {
   margin-top: 30px;
 }
 
+/* Icon styling inside contact left paragraph */
 .contact-left p i {
   color: #119015;
   margin-right: 15px;
   font-size: 25px;
 }
 
+/* Social icons styling */
 .social-icons {
   margin-top: 30px;
 }
 
+/* Social icons link styling */
 .social-icons a {
   text-decoration: none;
   font-size: 30px;
@@ -306,20 +346,24 @@ nav ul li a:hover::after {
   transition: transform 0.5s;
 }
 
+/* Hover effect for social icons */
 .social-icons a:hover {
   color: #119015;
   transform: translateY(-5px);
 }
 
+/* Button styling for contact section */
 .btn.btn2 {
   display: inline-block;
   background: #119015;
 }
 
+/* Contact form styling */
 .contact-right form {
   width: 100%;
 }
 
+/* Input and textarea styling inside form */
 form input,
 form textarea {
   width: 100%;
@@ -333,6 +377,7 @@ form textarea {
   border-radius: 6px;
 }
 
+/* Button styling inside form */
 form btn2 {
   padding: 14px 60px;
   font-size: 18px;
@@ -414,6 +459,7 @@ nav .fas {
   }
 }
 
+/* Message display styling */
 #msg {
   color: #119015;
   margin-top: -40px;
