@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background: #080808;
+  background: #000000; /* Change to new background color */
   color: #fff;
 }
 
@@ -19,14 +19,15 @@ body {
 #header {
   width: 100%;
   height: 100vh;
-  /* background-image: url(images/back.png); */
-  background-size: 100% 100%;
-  background-position: center;
+  background-image: url(images/moon-removebg.png);
+  background-size: 50%; /* Adjust the percentage as needed */
+  background-repeat: no-repeat;
+  background-position: right; /* Right justify the background image */
 }
 
 /* Styling for the logo image */
 .logo {
-  width: 140px; /* Adjust the width as needed */
+  width: 200px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
 
@@ -63,7 +64,7 @@ nav ul li a::after {
   content: "";
   width: 0%;
   height: 3px;
-  background: #119015;
+  background: #067f38; /* Change to new green color */
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -87,12 +88,12 @@ nav ul li a:hover::after {
 }
 
 .header-text h1 span {
-  color: #119015;
+  color: #067f38; /* Change to new green color */
 }
 /* ------------------about------------------- */
 #about {
   padding: 80px 0;
-  color: #ababab;
+  color: #e0e0e0; /* Adjust text color for readability */
 }
 
 /* Flexbox layout for rows */
@@ -111,13 +112,45 @@ nav ul li a:hover::after {
 
 /* About section image */
 .about-col-1 img {
-  width: 100%; /* Set the width to a third of the container */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  animation: slideShow 30s infinite;
+  object-fit: cover; /* Ensure the image covers the container */
+  /* border-radius: 15px; Ensure all corners have smooth edges */
+}
+
+.about-col-1 img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.about-col-1 img:nth-child(2) {
+  animation-delay: 10s;
+}
+
+.about-col-1 img:nth-child(3) {
+  animation-delay: 20s;
 }
 
 .about-col-1 {
   flex-basis: 35%;
+  position: relative;
+  overflow: hidden;
+  width: 300px; /* Define the width of the image container */
+  height: 400px; /* Define the height of the image container */
+  /* border-radius: 15px; Ensure the container has smooth edges */
+}
+
+@keyframes slideShow {
+  0%,
+  33.33% {
+    opacity: 1;
+  }
+  33.34%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .about-col-2 {
@@ -151,7 +184,7 @@ nav ul li a:hover::after {
   content: "";
   width: 0;
   height: 3px;
-  background: #119015;
+  background: #067f38; /* Change to new green color */
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -232,7 +265,10 @@ nav ul li a:hover::after {
 .layer {
   width: 100%;
   height: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), #119015);
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    #067f38
+  ); /* Change to new green color */
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -257,7 +293,7 @@ nav ul li a:hover::after {
 /* Layer link styling */
 .layer a {
   margin-top: 20px;
-  color: #119015;
+  color: #067f38; /* Change to new green color */
   text-decoration: none;
   font-size: 18px;
   line-height: 60px;
@@ -293,7 +329,7 @@ nav ul li a:hover::after {
 
 /* Hover effect for button */
 .btn:hover {
-  background: #119015;
+  background: #067f38; /* Change to new green color */
 }
 
 /* --------------------contact------------------- */
@@ -326,7 +362,7 @@ nav ul li a:hover::after {
 
 /* Icon styling inside contact left paragraph */
 .contact-left p i {
-  color: #119015;
+  color: #067f38; /* Change to new green color */
   margin-right: 15px;
   font-size: 25px;
 }
@@ -348,14 +384,14 @@ nav ul li a:hover::after {
 
 /* Hover effect for social icons */
 .social-icons a:hover {
-  color: #119015;
+  color: #067f38; /* Change to new green color */
   transform: translateY(-5px);
 }
 
 /* Button styling for contact section */
 .btn.btn2 {
   display: inline-block;
-  background: #119015;
+  background: #067f38; /* Change to new green color */
 }
 
 /* Contact form styling */
@@ -392,8 +428,10 @@ nav .fas {
 
 @media only screen and (max-width: 600px) {
   #header {
-    /* background-image: url(images/back.png); */
+    background-position: center; /* Center the background image on small screens */
+    background-size: 80%; /* Increase the background image size on small screens */
   }
+
   .header-text {
     margin-top: 100%;
     font-size: 16px;
@@ -409,7 +447,7 @@ nav .fas {
   }
 
   nav ul {
-    background: #119015;
+    background: #067f38; /* Change to new green color */
     position: fixed;
     top: 0;
     right: -200px;
@@ -461,7 +499,7 @@ nav .fas {
 
 /* Message display styling */
 #msg {
-  color: #119015;
+  color: #067f38; /* Change to new green color */
   margin-top: -40px;
   display: none;
 }
