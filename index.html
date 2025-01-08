@@ -131,11 +131,54 @@
                                 class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
+                <div class="work hidden">
+                    <img src="images/Mako Paint.png">
+                    <div class="layer">
+                        <h3>Mako Paint</h3>
+                        <p>This is a paint application completely developed
+                            by me using Stack implementation for undo and redo features.
+                            This application also features everything you would find
+                            normally in a drawing application like pen color and size,
+                            stickers and export all in an easily readable and simple design.</p>
+                        <a href="https://mako1688.github.io/cmpm-121-demo-2/"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work hidden">
+                    <img src="images/Geocoin.png">
+                    <div class="layer">
+                        <h3>Geocoin Carrier</h3>
+                        <p>Geocoin Carrier is a web-based game where players
+                            navigate a map to collect and transport coins between
+                            geocaches. The game is built using Leaflet for map
+                            visualization and TypeScript for game logic. Players
+                            can move around the map, pick up coins from geocaches,
+                            and drop them off at other geocaches. Each coin has a
+                            unique identity based on the cache it was originally spawned in. </p>
+                        <a href="https://mako1688.github.io/cmpm-121-demo-2/"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work hidden">
+                    <img src="images/MillionCard.png">
+                    <div class="layer">
+                        <h3>And More Coming Soon!</h3>
+                        <p>Despite being adamently involved in my university work,
+                            I am still working on many more projects to come in and
+                            out of my studies.</p>
+                    </div>
+                </div>
             </div>
             <!-- Button to see more work -->
-            <a href="#" class="btn">See more</a>
+            <a class="btn" id="seeMoreBtn" onclick="showMoreWork()">See more</a>
         </div>
     </div>
+    <!-- ------------------Toys------------------- -->
+    <!-- <div class="toys">
+        <div class="container">
+            <h1 class="sub-title">Toys</h1>
+        </div>
+    </div> -->
 
     <!-- ----------------contact------------------>
     <!-- Contact section -->
@@ -146,7 +189,7 @@
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
                     <p><i class="fas fa-envelope"></i> marcoogazvega@hotmail.com</p>
-                    <p><i class="fas fa-phone"></i> 9494446606</p>
+                    <p><i class="fas fa-phone"></i> 949-444-6606</p>
                     <!-- Social icons -->
                     <div class="social-icons">
                         <a href="https://discordapp.com/users/248626255023308800" target="_blank"><i
@@ -237,6 +280,26 @@
                     }, 10000); // 10000 milliseconds = 10 seconds
                 });
         });
+
+        function showMoreWork() {
+            var hiddenWorks = document.querySelectorAll('.work.hidden');
+            var seeMoreBtn = document.getElementById('seeMoreBtn');
+            console.log('Button text:', seeMoreBtn.textContent);
+            if (seeMoreBtn.textContent === 'See more') {
+                hiddenWorks.forEach(function (work) {
+                    work.classList.remove('hidden');
+                });
+                seeMoreBtn.textContent = 'See less';
+            } else {
+                var allWorks = document.querySelectorAll('.work');
+                allWorks.forEach(function (work, index) {
+                    if (index >= allWorks.length - 3) {
+                        work.classList.add('hidden');
+                    }
+                });
+                seeMoreBtn.textContent = 'See more';
+            }
+        }
     </script>
 </body>
 

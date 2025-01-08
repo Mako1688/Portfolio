@@ -332,6 +332,10 @@ nav ul li a:hover::after {
   background: #067f38; /* Change to new green color */
 }
 
+.hidden {
+  display: none;
+}
+
 /* --------------------contact------------------- */
 .contact {
   padding: 80px 10%;
