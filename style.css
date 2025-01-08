@@ -499,6 +499,37 @@ nav .fas {
   .contact-right {
     flex-basis: 100%;
   }
+  /* Adjust the font size for the portfolio item text */
+  .work .layer p {
+    font-size: 12px; /* Reduce the font size */
+    padding: 10px; /* Adjust the padding */
+  }
+
+  /* Adjust the font size for the portfolio item headings */
+  .work .layer h3 {
+    font-size: 16px; /* Reduce the font size */
+  }
+
+  /* Adjust the font size for the portfolio item links */
+  .work .layer a {
+    font-size: 14px; /* Reduce the font size */
+  }
+
+  /* Adjust the grid layout for the work list */
+  .work-list {
+    grid-template-columns: 1fr; /* Make each work item take full width */
+    grid-gap: 20px; /* Reduce the gap between work items */
+  }
+
+  /* Adjust the padding for the portfolio section */
+  #portfolio {
+    padding: 40px 5%; /* Reduce the padding */
+  }
+
+  /* Adjust the margin for the portfolio section title */
+  #portfolio .sub-title {
+    margin-bottom: 20px; /* Reduce the margin */
+  }
 }
 
 /* Message display styling */
