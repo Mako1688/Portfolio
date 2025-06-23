@@ -171,6 +171,17 @@
                     </div>
                 </div>
                 <div class="work hidden">
+                    <img src="images/GalacticCoffeeShop.png">
+                    <div class="layer">
+                        <h3>Galactic Coffee Shop</h3>
+                        <p>Galactic Coffee Shop is a clicker game set to release on steam this summer developed by a group 
+                            of UCSC students including me! I worked on the backend of the project and fully developed the 
+                            audio system and integration.</p>
+                        <a href="https://store.steampowered.com/app/3692320/Galactic_Coffee_Shop/" target="_blank"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work hidden">
                     <img src="images/MillionCard.png">
                     <div class="layer">
                         <h3>And More Coming Soon!</h3>
@@ -290,9 +301,7 @@
                         msgElement.style.display = "none";
                     }, 10000); // 10000 milliseconds = 10 seconds
                 });
-        });
-
-        function showMoreWork() {
+        });        function showMoreWork() {
             var hiddenWorks = document.querySelectorAll('.work.hidden');
             var seeMoreBtn = document.getElementById('seeMoreBtn');
             console.log('Button text:', seeMoreBtn.textContent);
@@ -304,7 +313,7 @@
             } else {
                 var allWorks = document.querySelectorAll('.work');
                 allWorks.forEach(function (work, index) {
-                    if (index >= allWorks.length - 3) {
+                    if (index >= 3) {
                         work.classList.add('hidden');
                     }
                 });
