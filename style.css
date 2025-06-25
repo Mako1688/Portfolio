@@ -148,10 +148,10 @@ nav ul li a:hover::after {
 
 @keyframes slideShow {
   0%,
-  33.33% {
+  20% {
     opacity: 1;
   }
-  33.34%,
+  20.01%,
   100% {
     opacity: 0;
   }
