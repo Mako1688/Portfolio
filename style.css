@@ -116,7 +116,7 @@ nav ul li a:hover::after {
   height: 100%;
   position: absolute;
   opacity: 0;
-  animation: slideShow 30s infinite;
+  animation: slideShow 50s infinite;
   object-fit: cover; /* Ensure the image covers the container */
   /* border-radius: 15px; Ensure all corners have smooth edges */
 }
@@ -124,13 +124,17 @@ nav ul li a:hover::after {
 .about-col-1 img:nth-child(1) {
   animation-delay: 0s;
 }
-
 .about-col-1 img:nth-child(2) {
   animation-delay: 10s;
 }
-
 .about-col-1 img:nth-child(3) {
   animation-delay: 20s;
+}
+.about-col-1 img:nth-child(4) {
+  animation-delay: 30s;
+}
+.about-col-1 img:nth-child(5) {
+  animation-delay: 40s;
 }
 
 .about-col-1 {
