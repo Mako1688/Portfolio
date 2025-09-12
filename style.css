@@ -721,7 +721,7 @@ nav .fas {
     width: 200px;
     height: 100%;
     padding-top: 50px;
-    z-index: 2;
+    z-index: 9999;
     transition: right 0.5s;
   }
   nav ul li {
