@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    
     <!-- Header section -->
     <div id="header">
         <div class="container">
@@ -435,7 +436,7 @@
             });
         }
 
-        // Initialize stat bars on page load and on scroll to skills section
+        // Initialize everything on page load
         document.addEventListener('DOMContentLoaded', function() {
             // Animate stats when page loads
             setTimeout(animateStatBars, 500);
@@ -508,19 +509,62 @@
             var hiddenWorks = document.querySelectorAll('.work.hidden');
             var seeMoreBtn = document.getElementById('seeMoreBtn');
             console.log('Button text:', seeMoreBtn.textContent);
+            
+            // Add loading state to button
+            seeMoreBtn.classList.add('loading');
+            
             if (seeMoreBtn.textContent === 'See more') {
-                hiddenWorks.forEach(function (work) {
-                    work.classList.remove('hidden');
+                // Add revealing animation with staggered delays
+                hiddenWorks.forEach(function (work, index) {
+                    setTimeout(() => {
+                        work.classList.remove('hidden');
+                        work.classList.add('revealing');
+                        
+                        // Remove revealing class after animation completes
+                        setTimeout(() => {
+                            work.classList.remove('revealing');
+                        }, 600);
+                    }, index * 150); // Stagger each item by 150ms
                 });
-                seeMoreBtn.textContent = 'See less';
+                
+                // Change button text and remove loading state after all animations
+                setTimeout(() => {
+                    seeMoreBtn.textContent = 'See less';
+                    seeMoreBtn.classList.remove('loading');
+                }, hiddenWorks.length * 150 + 600);
+                
             } else {
+                // Hide items with reverse animation
                 var allWorks = document.querySelectorAll('.work');
+                var itemsToHide = [];
+                
                 allWorks.forEach(function (work, index) {
                     if (index >= 3) {
-                        work.classList.add('hidden');
+                        itemsToHide.push(work);
                     }
                 });
-                seeMoreBtn.textContent = 'See more';
+                
+                // Reverse stagger for hiding
+                itemsToHide.reverse().forEach(function (work, index) {
+                    setTimeout(() => {
+                        work.style.transition = 'all 0.4s ease-out';
+                        work.style.opacity = '0';
+                        work.style.transform = 'translateY(30px) scale(0.95)';
+                        
+                        setTimeout(() => {
+                            work.classList.add('hidden');
+                            work.style.opacity = '';
+                            work.style.transform = '';
+                            work.style.transition = '';
+                        }, 400);
+                    }, index * 100);
+                });
+                
+                // Change button text and remove loading state after all animations
+                setTimeout(() => {
+                    seeMoreBtn.textContent = 'See more';
+                    seeMoreBtn.classList.remove('loading');
+                }, itemsToHide.length * 100 + 400);
             }
         }
     </script>
