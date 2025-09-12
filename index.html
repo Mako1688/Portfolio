@@ -410,6 +410,17 @@
         </div>
     </div>
 
+    <!-- Confirmation Banner -->
+    <div id="confirmationBanner" class="confirmation-banner">
+        <div class="banner-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="bannerMessage">Message sent successfully!</span>
+            <button class="banner-close" onclick="closeBanner()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
     <script>
         var tablinks = document.getElementsByClassName('tab-links');
         var tabcontents = document.getElementsByClassName('tab-contents');
@@ -466,6 +477,39 @@
             sidemenu.style.right = "-200px";
         }
 
+        // Banner functionality
+        function showBanner(message, isSuccess = true) {
+            const banner = document.getElementById('confirmationBanner');
+            const messageElement = document.getElementById('bannerMessage');
+            const icon = banner.querySelector('.fas');
+            
+            messageElement.textContent = message;
+            
+            // Update icon and styling based on success/error
+            if (isSuccess) {
+                icon.className = 'fas fa-check-circle';
+                banner.classList.remove('error');
+                banner.classList.add('success');
+            } else {
+                icon.className = 'fas fa-exclamation-circle';
+                banner.classList.remove('success');
+                banner.classList.add('error');
+            }
+            
+            // Show banner with animation
+            banner.classList.add('show');
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                closeBanner();
+            }, 5000);
+        }
+
+        function closeBanner() {
+            const banner = document.getElementById('confirmationBanner');
+            banner.classList.remove('show');
+        }
+
         document.getElementById('contactForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
 
@@ -482,28 +526,16 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    var msgElement = document.getElementById('msg');
                     if (data.result === 'success') {
-                        msgElement.textContent = "Message sent successfully";
-                        msgElement.style.display = "block";
-                        setTimeout(function () {
-                            msgElement.style.display = "none";
-                        }, 10000); // 10000 milliseconds = 10 seconds
+                        showBanner("Message sent successfully! I'll get back to you soon.", true);
+                        // Clear the form
+                        this.reset();
                     } else {
-                        msgElement.textContent = "Error sending message: " + data.error;
-                        msgElement.style.display = "block";
-                        setTimeout(function () {
-                            msgElement.style.display = "none";
-                        }, 10000); // 10000 milliseconds = 10 seconds
+                        showBanner("Error sending message: " + data.error, false);
                     }
                 })
                 .catch(error => {
-                    var msgElement = document.getElementById('msg');
-                    msgElement.textContent = "Error sending message: " + error.message;
-                    msgElement.style.display = "block";
-                    setTimeout(function () {
-                        msgElement.style.display = "none";
-                    }, 10000); // 10000 milliseconds = 10 seconds
+                    showBanner("Error sending message: " + error.message, false);
                 });
         });        function showMoreWork() {
             var hiddenWorks = document.querySelectorAll('.work.hidden');

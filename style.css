@@ -803,3 +803,113 @@ nav .fas {
   margin-top: -40px;
   display: none;
 }
+
+/* Confirmation Banner Styling */
+.confirmation-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #067f38, #0a9d47);
+  color: #fff;
+  padding: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(6, 127, 56, 0.3);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.confirmation-banner.show {
+  transform: translateY(0);
+}
+
+.confirmation-banner.error {
+  background: linear-gradient(135deg, #d32f2f, #f44336);
+  box-shadow: 0 -4px 20px rgba(211, 47, 47, 0.3);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.banner-content i.fas {
+  font-size: 18px;
+  margin-right: 12px;
+  animation: bannerIconPulse 2s ease-in-out infinite;
+}
+
+.banner-content span {
+  font-size: 16px;
+  font-weight: 500;
+  flex: 1;
+  text-align: center;
+}
+
+.banner-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 15px;
+}
+
+.banner-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.banner-close:active {
+  transform: scale(0.95);
+}
+
+@keyframes bannerIconPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Mobile responsiveness for banner */
+@media only screen and (max-width: 600px) {
+  .banner-content {
+    padding: 12px 15px;
+  }
+  
+  .banner-content span {
+    font-size: 14px;
+  }
+  
+  .banner-content i.fas {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .banner-close {
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
