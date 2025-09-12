@@ -110,15 +110,32 @@ nav ul li a:hover::after {
   padding: 20px;
 }
 
-/* About section image */
+/* About section image container */
+.about-col-1 {
+  flex-basis: 35%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  height: 450px;
+  border-radius: 15px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(6, 127, 56, 0.3);
+}
+
+/* About section images */
 .about-col-1 img {
   width: 100%;
   height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
-  animation: slideShow 50s infinite;
-  object-fit: cover; /* Ensure the image covers the container */
-  /* border-radius: 15px; Ensure all corners have smooth edges */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+  transition: opacity 1s ease-in-out;
+  animation: smoothSlideShow 50s infinite;
 }
 
 .about-col-1 img:nth-child(1) {
@@ -137,23 +154,26 @@ nav ul li a:hover::after {
   animation-delay: 40s;
 }
 
-.about-col-1 {
-  flex-basis: 35%;
-  position: relative;
-  overflow: hidden;
-  width: 300px; /* Define the width of the image container */
-  height: 400px; /* Define the height of the image container */
-  /* border-radius: 15px; Ensure the container has smooth edges */
-}
-
-@keyframes slideShow {
-  0%,
-  20% {
-    opacity: 1;
+@keyframes smoothSlideShow {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
   }
-  20.01%,
+  2% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  18% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
   100% {
     opacity: 0;
+    transform: scale(0.95);
   }
 }
 
@@ -658,6 +678,8 @@ nav .fas {
 
   .about-col-1 {
     margin-bottom: 30px;
+    max-width: 280px;
+    height: 350px;
   }
 
   .about-col-2 {
