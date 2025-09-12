@@ -8,6 +8,9 @@
 /* Smooth scrolling for the entire document */
 html {
   scroll-behavior: smooth;
+  /* Prevent scroll issues on mobile with fixed elements */
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
 }
 
 body {
@@ -15,6 +18,9 @@ body {
   color: #fff;
   position: relative;
   overflow-x: hidden;
+  /* Ensure proper stacking context for fixed elements */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* Styling for the header section */
@@ -716,24 +722,51 @@ nav .fas {
   nav ul {
     background: #067f38; /* Change to new green color */
     position: fixed;
-    top: 0;
-    right: -200px;
-    width: 200px;
-    height: 100%;
-    padding-top: 50px;
+    top: 10px; /* Position at the very top of the screen */
+    right: -220px; /* Start position off-screen */
+    width: 200px; /* Fixed width to ensure proper coverage */
+    height: auto; /* Auto height to fit content */
+    padding: 50px 0 20px 0; /* Increase top padding to give X button more space */
     z-index: 9999;
-    transition: right 0.5s;
+    transition: right 0.5s, transform 0.5s; /* Transition both properties */
+    border-radius: 15px 0 0 15px; /* Rounded corners on the left side */
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    transform: translate3d(220px, 0, 0); /* Start hidden using transform */
+    will-change: transform; /* Optimize for animations */
+    -webkit-transform: translate3d(220px, 0, 0); /* Safari support */
+    -webkit-backface-visibility: hidden; /* Safari optimization */
+    backface-visibility: hidden; /* Prevent rendering issues */
   }
   nav ul li {
     display: block;
-    margin: 25px;
+    margin: 8px 0; /* Reduce vertical margin between items */
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 12px 25px; /* Reduce padding for navigation links */
+    margin: 0;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Add hover effect */
+    border-radius: 5px;
   }
 
   nav ul .fas {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 8px; /* Adjust close button position */
+    left: 12px;
     cursor: pointer;
+    padding: 15px; /* Increase padding for larger touch target */
+    font-size: 18px; /* Make the X icon larger */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul .fas:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Add hover effect */
   }
 
   .sub-title {

@@ -472,12 +472,24 @@
         var sidemenu = document.getElementById('sidemenu');
 
         function openmenu() {
-            sidemenu.style.right = "0";
+            sidemenu.style.transform = "translate3d(0, 0, 0)"; // Show menu
+            sidemenu.style.right = "0px"; // Keep for compatibility
         }
 
         function closemenu() {
-            sidemenu.style.right = "-200px";
+            sidemenu.style.transform = "translate3d(220px, 0, 0)"; // Hide menu
+            sidemenu.style.right = "-220px"; // Keep for compatibility
         }
+
+        // Add event listeners to close menu when navigation links are clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#sidemenu a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closemenu(); // Close the menu when any navigation link is clicked
+                });
+            });
+        });
 
         // Banner functionality
         function showBanner(message, isSuccess = true) {
