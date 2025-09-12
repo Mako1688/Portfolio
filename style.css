@@ -760,6 +760,66 @@ nav .fas {
     margin-right: 20px;
   }
 
+  /* Mobile adjustments for RPG stats */
+  .rpg-stats-container {
+    padding: 20px 15px;
+    margin: 15px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-category {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .stat-category h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .stat-item {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .stat-name {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .stat-bar {
+    width: 100%;
+    height: 18px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .stat-fill {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .stat-value {
+    font-size: 11px;
+    right: 8px;
+  }
+
+  .character-info h3 {
+    font-size: 20px;
+  }
+
+  .character-class {
+    font-size: 14px;
+  }
+
+  .character-title {
+    font-size: 12px;
+  }
+
   .contact-left,
   .contact-right {
     flex-basis: 100%;
