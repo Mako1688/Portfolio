@@ -413,7 +413,7 @@
     </div>
 
     <!-- Confirmation Banner -->
-    <div id="confirmationBanner" class="confirmation-banner">
+    <div id="confirmationBanner" class="confirmation-banner" style="transform: translateY(100%); opacity: 0; visibility: hidden;">
         <div class="banner-content">
             <i class="fas fa-check-circle"></i>
             <span id="bannerMessage">Message sent successfully!</span>
@@ -483,6 +483,12 @@
 
         // Add event listeners to close menu when navigation links are clicked
         document.addEventListener('DOMContentLoaded', function() {
+            // Ensure banner is hidden on page load
+            const banner = document.getElementById('confirmationBanner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+
             const navLinks = document.querySelectorAll('#sidemenu a');
             navLinks.forEach(function(link) {
                 link.addEventListener('click', function() {
@@ -527,9 +533,16 @@
         document.getElementById('contactForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
 
+            // Get form data
             var formData = new FormData(this);
             var jsonData = {};
             formData.forEach((value, key) => { jsonData[key] = value });
+
+            // Validate that form has actual data
+            if (!jsonData.Name || !jsonData.Email || !jsonData.Message) {
+                showBanner("Please fill in all required fields.", false);
+                return;
+            }
 
             fetch('https://script.google.com/macros/s/AKfycbz-1d4C1GeGRJ3o7behZZ3YGnRuLju1EF_D0bQEKqUJbBxec3dglFdrpR3vWRQYdI5_/exec', {
                 method: 'POST',
