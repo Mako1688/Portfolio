@@ -477,7 +477,7 @@ nav ul li a:hover::after {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
@@ -495,9 +495,9 @@ nav ul li a:hover::after {
   white-space: nowrap;
 }
 
-/* Show badges on hover */
+/* Hide badges on hover when layer overlay is visible */
 .work:hover .tech-badges {
-  opacity: 1;
+  opacity: 0;
 }
 
 /* Work item image styling */
